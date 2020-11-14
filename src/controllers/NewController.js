@@ -11,9 +11,8 @@ module.exports = {
         let porta3 = "True"
         let temperatura2 = (Number(temperatura)+Math.random()/10).toFixed(2)
        // let umidade2 = (umidade + Math.random()/10).toString().toFixed(2)
-        let id = crypto.randomBytes(4).toString('hex')
         
-        await connection('db_tablename').insert({id,temperatura,umidade,porta1,porta2,temperatura2,porta3});
+        await connection('db_tablename').insert({temperatura,umidade,porta1,porta2,temperatura2,porta3});
         return res.json({temperatura,umidade,porta1,porta2,temperatura2,porta3})
     },
 
